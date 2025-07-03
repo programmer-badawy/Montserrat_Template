@@ -1,0 +1,198 @@
+/* Start Variables */
+:root {
+    --main-color: #00c7fc;
+    --secondary-color: #131316;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+    --main-duration: 0.5s;
+}
+/* End Variables */
+
+/* Start Component */
+
+
+/* end Component */
+
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    /* height: 2000px; */
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px; 
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* end Global Rules */
+/* start header */
+header{
+    width: 100%;    
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+header .container .logo{
+    width: 150px;
+}
+header .container nav{
+    width: 60% ;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+}
+@media (max-width:991px) {
+    header .container nav{
+        display: none;
+    }   
+}
+header .container nav a{
+    text-decoration: none;
+    color: #8d8d8d;
+    font-weight: 500;
+    transition: var(--main-duration);
+    position: relative;
+}
+header .container nav a.active{
+    color: var(--main-color);
+}
+header .container nav a::after{
+content: "";
+width: 0;
+height: 2px;
+background-color: var(--main-color);
+position: absolute;
+left: 0;
+bottom: -5px;
+transition: var(--main-duration);
+}
+header .container nav a:hover::after{
+    width: 100%;
+}
+
+header .container i.fa-bars{
+    display: none;
+    font-size: 25px;
+}
+@media (max-width:991px) {
+    header .container i.fa-bars{
+        display: block;
+    }
+}
+/* End header */
+/* Start landing */
+.landing{
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+.landing .container{
+    height: calc(100vb - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landing .container .content{
+    width: 100%;
+    height: 100px;
+    color: white;
+    text-align: center;
+}
+.landing .container .content span{
+    display: block;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+.landing .container .content h2{
+    font-size: 65px;
+    font-weight: 500;
+}
+@media (max-width: 768px) {
+    .landing .container .content span{
+        font-size: 16px;
+    }
+    .landing .container .content h2{
+        font-size: 50px;
+    }
+}
+.landing .container .content .btns{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    border-bottom: 40px;
+    margin-top: 40px;
+    
+    
+    
+}
+@media (max-width: 768px) {
+    .landing .container .content .btns{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.landing .container .content .btns a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    border: 1px solid white;
+    width: 200px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-duration);   
+    
+}
+.landing .container .content .btns a:hover{
+    letter-spacing: 1.5px;
+}
+.landing .container .content .btns a:first-child{
+
+}
+.landing .container .content .btns a:hover:first-child{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+.landing .container .content .btns a:last-child{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+/* End landing */
