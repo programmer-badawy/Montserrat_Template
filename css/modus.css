@@ -3,13 +3,46 @@
     --main-color: #00c7fc;
     --secondary-color: #131316;
     --section-padding: 60px;
-    --section-background: #f6f6f6;
+    --section-background: #f4f4f4;
     --main-duration: 0.5s;
 }
 /* End Variables */
 
 /* Start Component */
+/* s main heading */
+.main-heading{
+    text-align: center;
+}
+.main-heading h3{
+    font-weight: normal;
+    font-size: 30px;
+    position: relative;
+margin-bottom: 70px;
+text-transform: uppercase;
+}
+.main-heading h3::before{
+content: "";
+width: 150px;
+height: 2px;
+background-color: var(--main-color);
+position: absolute;
+bottom: -25px;
+left: 50%;
+transform: translateX(-50%);
+}
+.main-heading h3::after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: var(--section-background);
+    border: 2px solid var(--main-color);
+    position: absolute;
+    bottom: -33px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg) ;
 
+}
+/* e main heading */
 
 /* end Component */
 
@@ -81,6 +114,7 @@ header .container nav{
 header .container nav a{
     text-decoration: none;
     color: #8d8d8d;
+    font-size: 14px;
     font-weight: 500;
     transition: var(--main-duration);
     position: relative;
@@ -105,6 +139,7 @@ header .container nav a:hover::after{
 header .container i.fa-bars{
     display: none;
     font-size: 25px;
+    cursor: pointer;
 }
 @media (max-width:991px) {
     header .container i.fa-bars{
@@ -116,16 +151,30 @@ header .container i.fa-bars{
 .landing{
     width: 100%;
     background-color: var(--secondary-color);
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    position: relative;
 }
+.landing::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000bc;
+}
+
 .landing .container{
     height: calc(100vb - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .landing .container .content{
     width: 100%;
-    height: 100px;
+    
     color: white;
     text-align: center;
 }
@@ -155,9 +204,6 @@ header .container i.fa-bars{
     gap: 20px;
     border-bottom: 40px;
     margin-top: 40px;
-    
-    
-    
 }
 @media (max-width: 768px) {
     .landing .container .content .btns{
@@ -188,11 +234,118 @@ header .container i.fa-bars{
 
 }
 .landing .container .content .btns a:hover:first-child{
-    background-color: var(--main-color);
-    border-color: var(--main-color);
+    background-color: white;
+    border-color: white;
+    color: black;
 }
 .landing .container .content .btns a:last-child{
     background-color: var(--main-color);
     border-color: var(--main-color);
 }
+/*  */
+.down-arrow {
+    /* background-color: red; */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+}
+.down-arrow i {
+    color: var(--main-color);
+    font-size: 35px;
+    
+}
 /* End landing */
+/* Start History */
+.history{
+    background-color: var(--section-background);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    /* height: 100vh; */
+
+}
+@media (max-width: 768px) {
+    .history .container{
+        height: calc(90vh - 199px);
+    }
+    
+}
+.history .container p{
+    color: #637988;
+    text-align: center;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+.history .container p{
+    margin-top: 100px;
+}
+}
+    /* End History */
+/* Start Portfolio */
+.portfolio{
+    width: 100%;
+    /* overflow: hidden; */
+}
+.portfolio .slide-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+.portfolio .slide-list .photo{
+    width: 320px;
+    overflow: hidden;
+    position: relative;
+}
+.portfolio .slide-list .photo img{
+    max-width: 100%;
+    height: 100%;
+}
+
+.portfolio .photo .content{
+    width: 100%;
+    height: 70%;
+    background-color: #00c5fcc9;
+    color: white;
+    position: absolute;
+    bottom: -400px;
+    /* bottom: 0px; */
+    left: 0;
+    transition: var(--main-duration);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.portfolio .photo:hover .content{
+    bottom: 0;
+}
+
+.portfolio  .content h3{
+padding: 30px;
+text-align: center;
+font-weight: normal;
+}
+.portfolio  .content p{
+text-align: center;
+font-size: 12px;
+line-height: 1.5;
+width: 70%;
+text-shadow: 0px 0px 20px #00fcdf;
+}
+.portfolio  .content .socialicons{
+margin-top: 30px;
+width: 20%;
+display: flex;
+justify-content: space-between;
+}
+.portfolio  .content .socialicons a{
+    color: white;
+    font-size: 20px;
+}
+.portfolio  .content .socialicons a:hover{
+    color: var(--secondary-color);
+}
+
+/* End Portfolio */
